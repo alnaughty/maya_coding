@@ -15,7 +15,7 @@ void main() {
         email: "sad@fsdfsdf.dsssadasdasdadadad",
         password: "password",
         isTest: true);
-    var val = result.isLeft();
+    var val = result.isRight();
     expect(val, false);
   });
 }
