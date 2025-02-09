@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "218566165763",
+    "project_id": "maya-ex",
+    "storage_bucket": "maya-ex.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:218566165763:android:166d9cb029de856a91d536",
+        "android_client_info": {
+          "package_name": "com.example.maya_coding_test"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTApwE8KxDpz59C03r7ooJc-Dm-dLGlUE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
