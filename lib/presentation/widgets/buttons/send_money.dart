@@ -3,6 +3,7 @@ import 'package:gap/gap.dart';
 import 'package:maya_coding_test/config/app_color.dart';
 import 'package:maya_coding_test/core/extensions/colors.dart';
 import 'package:maya_coding_test/presentation/screens/send_money_screen.dart';
+import 'package:maya_coding_test/presentation/widgets/fail_bottomsheet.dart';
 import 'package:maya_coding_test/presentation/widgets/success_bottomsheet.dart';
 
 class SendMoneyBtn extends StatelessWidget {
@@ -16,7 +17,6 @@ class SendMoneyBtn extends StatelessWidget {
           MaterialPageRoute(
             builder: (context) => SendMoneyScreen(
               onSucceed: () async {
-                print("SHOW BOTTOM SHEET");
                 await showModalBottomSheet(
                   context: context,
                   isScrollControlled: true,
@@ -28,7 +28,6 @@ class SendMoneyBtn extends StatelessWidget {
                 );
               },
               onFail: () async {
-                print("SHOW BOTTOM SHEET");
                 await showModalBottomSheet(
                   context: context,
                   isScrollControlled: true,
@@ -36,13 +35,12 @@ class SendMoneyBtn extends StatelessWidget {
                   backgroundColor: Colors.transparent,
                   barrierColor: Colors.black.withNewOpacity(.5),
                   barrierLabel: "",
-                  builder: (context) => SuccessBottomsheet(),
+                  builder: (context) => FailBottomSheet(),
                 );
               },
             ),
           ),
         );
-        print("GO TO SEND MONEY SCREEN");
       },
       color: AppColor.scaffoldColor,
       shape: RoundedRectangleBorder(

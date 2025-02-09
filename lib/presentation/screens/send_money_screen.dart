@@ -88,7 +88,6 @@ class _SendMoneyScreenState extends ConsumerState<SendMoneyScreen> {
                                     setState(() {
                                       btnEnabled = text.isNotEmpty;
                                     });
-                                    print("BUTTON ENABLED $btnEnabled");
                                   },
                                   labelText: "Amount",
                                   controller: _amount,
@@ -188,7 +187,6 @@ class _SendMoneyScreenState extends ConsumerState<SendMoneyScreen> {
                                   try {
                                     final double value =
                                         double.parse(_amount.text);
-                                    print("SEND!");
                                     setState(() {
                                       isLoading = true;
                                     });

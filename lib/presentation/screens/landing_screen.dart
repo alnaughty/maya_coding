@@ -42,7 +42,6 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
     });
     _streamBalance = _bal.get(uid);
     _streamBalanceSubscription = _streamBalance!.listen((onData) {
-      print("ON BALANCE DATA: $onData");
       ref
           .read(UserProviders.userBalanceProvider.notifier)
           .update((r) => onData);

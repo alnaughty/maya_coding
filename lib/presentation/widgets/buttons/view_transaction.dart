@@ -10,7 +10,6 @@ class ViewTransactionBtn extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialButton(
       onPressed: () async {
-        print("GO TO TRANSACTION SCREEN");
         await Navigator.of(context).push(
           MaterialPageRoute(
             builder: (context) => TransactionScreen(),

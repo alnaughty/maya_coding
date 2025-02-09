@@ -38,12 +38,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
         Fluttertoast.showToast(msg: "User not found!");
         return;
       }
-      print("GO TO ERROR SCREEN : $error");
     }, (data) async {
-      print("PROCEED");
       final val = await _repository.getDetails(data.id);
       ref.read(UserProviders.userDetailsProvider.notifier).update((r) => val);
-      print("GO TO 2nd PAGE");
       // ignore: use_build_context_synchronously
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(

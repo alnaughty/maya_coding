@@ -16,7 +16,6 @@ class AppServices {
         headers: AppConstants.headers,
       );
       if (response.statusCode == 201 || response.statusCode == 200) {
-        print(response.body);
         final List users = json.decode(response.body);
 
         // if (user != null) {
@@ -29,21 +28,16 @@ class AppServices {
         // print(data);
         // return Right(UserModel.fromJson(data));
       } else {
-        print("ERROR ");
         throw HttpException("Invalid response: ${response.statusCode}");
       }
     } on http.ClientException {
-      print("ERROR");
       return Left(http.ClientException("Failed to connect to server"));
     } on TimeoutException {
-      print("ERROR TIMEOUT");
       return Left(
           TimeoutException("Connection timeout, request is taking a while"));
     } on SocketException {
-      print("ERROR SOCKET");
       return Left(SocketException("No internet connection"));
     } catch (e) {
-      print("ERROR $e");
       return Left(
         Exception(e.toString()),
       );

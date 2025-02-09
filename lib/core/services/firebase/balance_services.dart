@@ -21,7 +21,6 @@ class BalanceServices {
       final snapshot = await docRef.get();
       if (snapshot.exists && snapshot.data() != null) {
         final double val = double.parse(snapshot.data()!["amount"].toString());
-        print("CURRENT VALUE : $val");
         await docRef.set(
           {"amount": val + amount},
           SetOptions(merge: true),
@@ -29,7 +28,6 @@ class BalanceServices {
       }
       return; // Default amount if not found
     } catch (e) {
-      print("Error fetching amount: $e");
       return; // Return default amount on error
     }
     // final docRef = collection.doc(id.toString());

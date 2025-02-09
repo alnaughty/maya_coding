@@ -5,15 +5,17 @@ void main() {
   final AuthServices _authAPI = AuthServices();
 
   test("AUTH VALID USER TEST", () async {
-    var result =
-        await _authAPI.login(email: "Sincere@april.biz", password: "password");
+    var result = await _authAPI.login(
+        email: "Sincere@april.biz", password: "password", isTest: true);
     var val = result.isRight();
     expect(val, true);
   });
   test("AUTH INVALID USER TEST", () async {
     var result = await _authAPI.login(
-        email: "asdasdadssd@fsdfsdf.ffbiz", password: "password");
-    var val = result.isRight();
+        email: "sad@fsdfsdf.dsssadasdasdadadad",
+        password: "password",
+        isTest: true);
+    var val = result.isLeft();
     expect(val, false);
   });
 }

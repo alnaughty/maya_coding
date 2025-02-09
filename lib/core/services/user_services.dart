@@ -16,15 +16,11 @@ class UserServices {
 
       if (response.statusCode == 200) {
         final data = json.decode(response.body);
-        print("DATA $data");
         return Right(det.UserDetails.fromMap(data));
       } else {
-        print(response.body);
         return Left(Exception('Failed to fetch user'));
       }
     } catch (e, s) {
-      print("STACKTRACE: $s");
-      print('Error: $e');
       return Left(
         Exception(e),
       );

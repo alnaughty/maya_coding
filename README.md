@@ -35,5 +35,9 @@ This Flutter project allows users to manage balances using **Firebase Firestore*
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo/flutter-firestore-balance.git
-   cd flutter-firestore-balance
+   git clone https://github.com/alnaughty/maya_coding.git
+   cd maya_coding
+
+## How to Use the app
+1. **Check User Emails** [JSONPlaceholder](https://jsonplaceholder.typicode.com/users)
+2. **Use any email and use any password (not listed in the emails list)**
